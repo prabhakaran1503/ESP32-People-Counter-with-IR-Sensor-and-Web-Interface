@@ -1,67 +1,74 @@
-# ESP32-People-Counter-with-IR-Sensor-and-Web-Interface
-"ESP32-based people counting system using an IR sensor with a real-time web interface to monitor and reset the count."
+# ESP32 People Counter with IR Sensor (PBL Project)
 
+This project is a **people counting system using ESP32 and an IR sensor**.
+The ESP32 runs a **web server** that shows the number of people detected in real time through a simple web page.
 
-ESP32 People Counter with IR Sensor and Web Interface
+This project was developed as part of my **College PBL (Project Based Learning)**.
 
-This project implements a people counting system using an ESP32 and an IR sensor, with a simple web interface to monitor and reset the count. The ESP32 hosts a web server that shows the number of people detected in real-time.
+---
 
-Features
+## 🛠️ Technologies Used
 
-Counts people passing through an IR sensor.
+* ESP32
+* IR Sensor
+* Arduino IDE
+* WiFi (ESP32 Web Server)
 
-Real-time display of the count via a web interface.
+---
 
-Automatic page refresh every 5 seconds.
+## ⚙️ Features
 
-Reset the count from the web page.
+* Detects people using an **IR sensor**
+* Counts the number of people passing the sensor
+* Displays the **live count on a web page**
+* Web page **auto refresh every 5 seconds**
+* **Reset button** to clear the counter
+* Debounce logic to prevent multiple counts for one person
 
-Debounce logic to avoid multiple counts for a single person.
+---
 
-Components Required
+## 📂 Project Structure
 
-ESP32 Development Board
+```
+ESP32-People-Counter/
+│
+├── sad2.ino
+└── README.md
+```
 
-IR Sensor (e.g., IR obstacle sensor module)
+---
 
-Jumper wires
+## 🔌 Hardware Required
 
-USB cable for programming and power
+* ESP32 Development Board
+* IR Sensor Module
+* Jumper Wires
+* USB Cable
 
-Circuit Diagram
-IR Sensor VCC  -->  3.3V on ESP32
-IR Sensor GND  -->  GND on ESP32
-IR Sensor OUT  -->  GPIO 15 on ESP32
+---
 
+## 🔗 Circuit Connection
 
-Installation
+IR Sensor → ESP32
 
-Clone this repository:
-git clone https://github.com/your-username/esp32-people-counter.git
-cd esp32-people-counter
-Open in Arduino IDE or VS Code with PlatformIO.
+* VCC → 3.3V
+* GND → GND
+* OUT → GPIO 15
 
-Install required libraries:
+---
 
-WiFi.h (comes with ESP32 boards in Arduino IDE)
+## 🚀 How It Works
 
-WebServer.h (comes with ESP32 boards in Arduino IDE)
+1. ESP32 connects to WiFi.
+2. IR sensor detects when a person passes.
+3. The counter increases when the sensor is triggered.
+4. ESP32 hosts a **web page showing the current people count**.
+5. The page refreshes every 5 seconds to show updated values.
+6. The **Reset button** clears the counter.
 
-Update WiFi credentials in the sketch.ino file:
+---
 
-const char* ssid = "YourWiFiSSID";
-const char* password = "YourWiFiPassword";
+## 👨‍💻 Author
 
-Upload the code to your ESP32 board.
+Prabhakaran
 
-How to Use
-
-Connect the ESP32 to power and ensure the IR sensor is correctly wired.
-
-Open the Serial Monitor to see the WiFi connection status and IP address.
-
-Open a browser and navigate to the ESP32 IP address (e.g., http://192.168.1.123).
-
-The web page displays the current number of people detected.
-
-Click Reset Counter to reset the count.
